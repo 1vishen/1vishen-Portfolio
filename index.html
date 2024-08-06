@@ -3,50 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Replicated Website</title>
+    <link rel="stylesheet" href="styles/main-style.css">
 </head>
 <body>
-  <div class="nav">
-    <h2>GRAINEE</h2>
-    <div class="menu">
-      <p>About us</p>
-      <p>Our Mission</p>
-      <p>Contact us</p>
-    </div>
-  </div>
-  
-  <div class="hero">
-    <div class="hero-text">
-      <h1>Hi. I am Sankalp. A Developer.</h1>
-      <p>Grainy animated blob for your modern website.</p>
-      <div class="buttons">
-        <a class="button primary" href="https://dribbble.com/shots/21248617-Daily-Design-Code-3-Grainy-Gradients-Blurry-Background" target="_blank">View Design</a>
-        <a class="button secondary" href="https://twitter.com/juxtopposed" target="_blank">Stay Tuned</a>
-      </div>
-    </div>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#play">Play</a></li>
+                <li><a href="#notes">Notes</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="blob-cont">
-      <div class="yellow blob"></div>
-      <div class="red blob"></div>
-      <div class="green blob"></div>
+        <div class="yellow blob"></div>
+        <div class="red blob"></div>
+        <div class="green blob"></div>
     </div>
-  </div>
 
-  <svg>
-    <filter id='noiseFilter'>
-      <feTurbulence 
-        type='fractalNoise' 
-        baseFrequency='0.6' 
-        stitchTiles='stitch'/>
-       <feColorMatrix in="colorNoise" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
-          <feComposite operator="in" in2="SourceGraphic" result="monoNoise"/>
-          <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
-    </filter>
-  </svg>
+    <div class="corner-images">
+        <div class="corner-image top-left"><img src="images/image1.png" alt="Corner Image 1"></div>
+        <div class="corner-image top-right"><img src="images/image2.png" alt="Corner Image 2"></div>
+        <div class="corner-image bottom-left"><img src="images/image3.png" alt="Corner Image 3"></div>
+        <div class="corner-image bottom-right"><img src="images/image4.png" alt="Corner Image 4"></div>
+    </div>
 
-  <!-- Not required -->
-  <a href="https://www.youtube.com/watch?v=_ZFghigBmqo" target="_blank" class="youtube">Watch on YouTube</a>
-  
+    <div class="glass">
+        <h1>This is an example element for this website to cover the entire page</h1>
+        <h1>This is an example element for this website to cover the entire page</h1>
+        <h1>This is an example element for this website to cover the entire page</h1>
+        <h1>This is an example element for this website to cover the entire page</h1>
+        <h1>This is an example element for this website to cover the entire page</h1>
+        <h1>This is an example element for this website to cover the entire page</h1>
+    </div>
+
+    <svg>
+        <filter id='noiseFilter'>
+            <feTurbulence type='fractalNoise' baseFrequency='0.6' stitchTiles='stitch' />
+            <feColorMatrix in="colorNoise" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+            <feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
+            <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
+        </filter>
+    </svg>
+
+    <script src="scripts/main-script.js"></script>
 </body>
 </html>
