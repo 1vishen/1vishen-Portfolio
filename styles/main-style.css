@@ -1,5 +1,5 @@
 :root {
-  --bg: #f0f0f0;
+  --bg: #fff8e1;
   --yellow: #EDB74D;
   --red: #EB6666;
   --green: #6FB18A;
@@ -59,6 +59,8 @@ header {
   font-weight: bold;
 }
 
+
+/*moving color blobs*/
 .blob-cont {
   display: flex;
   flex-direction: column;
@@ -129,6 +131,8 @@ header {
   100% { top: 250px; right: 0px; transform: scale(1); }
 }
 
+
+/*rotating corner images*/
 .corner-images {
   position: fixed;
   top: 0;
@@ -174,12 +178,14 @@ header {
   to { transform: rotate(360deg); }
 }
 
+
+/*glass effects*/
 .glass {
   margin: 60px;
   padding: 60px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /*The same as backdrop-filter, but with a prefix for compatibility with WebKit browsers like Safari.*/
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
