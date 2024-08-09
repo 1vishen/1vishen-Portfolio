@@ -1,7 +1,7 @@
 /*Main site style*/
 
 :root {
-  --bg: #b3f3ad;
+  --bg: #ffffff;
   --yellow: #EDB74D;
   --red: #EB6666;
   --green: #6FB18A;
@@ -27,6 +27,26 @@ body::before {
   background: #8C8C8C;
   opacity: 0.4;
   filter: url(#noiseFilter);
+}
+
+/* light and dark mode implementation */
+
+body.light-mode {  
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e6c611;
+  color: #333333;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body.dark-mode {  
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #25a517;
+  color: #f1f1f1;
+  overflow-x: hidden;
+  position: relative;
 }
 
 header {
