@@ -1,61 +1,66 @@
 /*Main site style*/
 
 :root {
-  --bg: #ffffff;
-  --yellow: #EDB74D;
-  --red: #EB6666;
-  --green: #6FB18A;
-  --text: #333;
+  --bg_light_mode: #ede7de;
+  --text_light_mode: #025a4e;
+  --bg_dark_mode: #233831;
+  --text_dark_mode: #8fdcc2;
+  --yellow: #edb74d;
+  --red: #eb6666;
+  --green: #6fb18a;
 }
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: var(--bg);
+  background-color: var(--bg_light_mode);
+  color: var(--text_light_mode);
   overflow-x: hidden;
   position: relative;
 }
 
-body::before {
-  content: '';
+/* to add a  grainy effect */
+/* body::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -2;
-  background: #8C8C8C;
+  background: #8c8c8c;
   opacity: 0.4;
   filter: url(#noiseFilter);
-}
+} */
 
 /* light and dark mode implementation */
 
-body.light-mode {  
+body.light-mode {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #e6c611;
-  color: #333333;
+  background-color: var(--bg_light_mode);
+  color: var(--text_light_mode);
   overflow-x: hidden;
   position: relative;
 }
 
-body.dark-mode {  
+body.dark-mode {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #25a517;
-  color: #f1f1f1;
+  background-color: var(--bg_dark_mode);
+  color: var(--text_dark_mode);
   overflow-x: hidden;
   position: relative;
 }
 
 header {
-  position: relative;
+  position: sticky;
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 11;
 }
 
+/* main nav bar */
 .navbar {
   /* background: var(--bg); */
   backdrop-filter: blur(10px);
@@ -81,140 +86,21 @@ header {
   font-weight: bold;
 }
 
-
-/*moving color blobs*/
-
-.blob-cont {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: -2;
-  height: 500px;
-  width: 500px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.blob {
-  border-radius: 100px;
-  filter: blur(60px);
-}
-
-.yellow {
-  background-color: var(--yellow);
-  position: absolute;
-  top: 200px;
-  left: 100px;
-  height: 200px;
-  width: 200px;
-  animation: yellow 8s infinite ease;
-}
-
-.green {
-  background-color: var(--green);
-  position: absolute;
-  top: 80px;
-  right: -20px;
-  height: 200px;
-  width: 250px;
-  animation: green 8s infinite ease;
-}
-
-.red {
-  background-color: var(--red);
-  position: absolute;
-  right: 0;
-  top: 300px;
-  height: 250px;
-  width: 200px;
-  animation: red 8s infinite linear;
-}
-
-@keyframes yellow {
-  0% { top: 200px; left: 100px; transform: scale(1); }
-  30% { top: 300px; left: 150px; transform: scale(1.2); }
-  60% { top: 100px; left: 200px; transform: scale(1.3); }
-  100% { top: 200px; left: 100px; transform: scale(1); }
-}
-
-@keyframes green {
-  0% { top: 80px; right: -20px; transform: scale(1.2); }
-  30% { top: 300px; right: -20px; transform: scale(1); }
-  60% { top: 200px; right: 100px; transform: scale(1); }
-  100% { top: 80px; right: -20px; transform: scale(1.2); }
-}
-
-@keyframes red {
-  0% { top: 250px; right: 0px; transform: scale(1); }
-  30% { top: 150px; right: 150px; transform: scale(1.4); }
-  60% { top: 250px; right: 100px; transform: scale(1); }
-  100% { top: 250px; right: 0px; transform: scale(1); }
-}
-
-
-/*rotating corner images*/
-
-.corner-image {
-  position: fixed;
-  width: 600px;
-  height: 600px;
-  overflow: hidden;
-  z-index: 7;
-  pointer-events: none;
-}
-
-.corner-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Changed from 'cover' to 'contain' */
-}
-
-.top-left {
-  top: -375px;
-  left: -375px;
-  animation: rotate 10s infinite linear;
-}
-
-.top-right {
-  top: -375px;
-  right: -375px;
-  animation: rotate 15s infinite linear;
-}
-
-.bottom-left {
-  bottom: -375px;
-  left: -375px;
-  animation: rotate 20s infinite linear;
-}
-
-.bottom-right {
-  bottom: -375px;
-  right: -375px;
-  animation: rotate 25s infinite linear;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-/*glass effects*/
+/* glass effects */
 
 .glass {
   position: relative;
   margin: 60px;
   padding: 60px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /*The same as backdrop-filter, but with a prefix for compatibility with WebKit browsers like Safari.*/
+  -webkit-backdrop-filter: blur(
+    10px
+  ); /*The same as backdrop-filter, but with a prefix for compatibility with WebKit browsers like Safari.*/
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);

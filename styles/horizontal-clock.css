@@ -1,17 +1,19 @@
 /*css for horizontal clock*/
 
 .time-slider-container {
-  position: fixed;
+  position: static;
   bottom: 20px;
-  left: 0;
   width: 100%;
   padding: 10px 0;
+  z-index: 10;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .time-slider {
   position: relative;
   width: 80%;
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 0 auto;
   height: 60px;
 }
@@ -25,15 +27,15 @@
   position: relative;
 }
 
-.hour-markings::before {
-  content: '';
+/* .hour-markings::before {
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 2px;
-  background-color: #888;
-}
+  background-color: #ffffff;
+} */
 
 .hour-markings span {
   width: 2px;
@@ -42,12 +44,12 @@
   z-index: 1;
 }
 
-.hour-markings span:nth-child(3n+1) {
+.hour-markings span:nth-child(3n + 1) {
   height: 25px;
 }
 
 .hour-markings .major {
-  height: 30px;
+  height: 25px;
   width: auto;
   font-size: 12px;
   color: #888;
@@ -57,63 +59,55 @@
 }
 
 .hour-markings span.daytime {
-  background-color: #ffd700;
+  background-color: #f1c174;
 }
 
 .hour-markings span.nighttime {
-  background-color: #4169e1;
+  background-color: #389878;
 }
 
 .slider-indicator {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 20px;
+  width: 20px; /* Width of the indicator. Update this value in JS if changed here */
   height: 40px;
   cursor: pointer;
   transition: left 0.3s ease;
 }
 
 .slider-indicator::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
+  width: 20px; /* Update this value if .slider-indicator width changes */
+  height: 20px; /* Adjust if necessary */
   background-color: #fff;
   border: 2px solid #333;
   border-radius: 50%;
 }
 
 .slider-indicator::after {
-  content: '';
+  content: "";
   position: absolute;
-  top: 20px;
+  top: 20px; /* Adjust if needed to align with the new height of .slider-indicator */
   left: 50%;
   transform: translateX(-50%);
-  width: 2px;
-  height: 20px;
+  width: 2px; /* Typically remains constant, adjust if the design changes */
+  height: 20px; /* Update if height of .slider-indicator changes */
   background-color: #333;
 }
 
 .mode-icon {
   position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 30px;
+  top: 11px; /* Center vertically within the circle */
+  left: 50%; /* Center horizontally within the circle */
+  transform: translate(-50%, -50%);
+  width: 30px; /* Update this if the size needs to change relative to .slider-indicator */
+  height: 30px; /* Update if necessary */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-.mode-icon.sun {
-  background-image: url('images/sun-icon.png');
-}
-
-.mode-icon.moon {
-  background-image: url('images/moon-icon.png');
 }
