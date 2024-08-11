@@ -14,30 +14,28 @@
     <header>
       <nav class="navbar">
         <ul>
-          <li><a href="#work">Work</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
           <li><a href="#notes">Notes</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#resume">Resume</a></li>
         </ul>
       </nav>
     </header>
 
-    <!--moving color blob and rotating material you effects-->
+    <!--moving color blobs-->
     <div class="blob-cont">
       <div class="yellow blob"></div>
       <div class="red blob"></div>
       <div class="green blob"></div>
     </div>
 
-    <div class="corner-image bottom-left">
-      <img src="images/Monetp-y.png" alt="Corner Image 3" />
-    </div>
-    <div class="corner-image bottom-right">
-      <img src="images/Monetp-t.png" alt="Corner Image 4" />
-    </div>
-
     <!--main content-->
-    <div class="glass"></div>
+    <!-- div with glass effects -->
+    <div class="glass my-name">
+      <p>Hi. I'm Sankalp.</p>
+      <p>A Developer.</p>
+    </div>
 
     <div class="glass">
       <h1>
@@ -58,6 +56,13 @@
       <h1>
         This is an example element on this website to cover the entire page
       </h1>
+    </div>
+
+    <div class="nav-wrapper">
+      <nav>
+        <h1 class="hover-me">this is an example text</h1>
+        <div class="cursor"></div>
+      </nav>
     </div>
 
     <div class="glass">
@@ -113,26 +118,36 @@
         <div class="hour-markings">
           <span class="major nighttime">00</span>
 
-          <span class="nighttime"></span><span class="nighttime"></span>
-          <span class="nighttime"></span><span class="nighttime"></span
-          ><span class="nighttime"></span> <span class="daytime"></span
-          ><span class="daytime"></span><span class="daytime"></span>
-          <span class="daytime"></span><span class="daytime"></span
-          ><span class="daytime"></span>
-
-          <span class="daytime"></span><span class="daytime"></span
-          ><span class="daytime"></span> <span class="daytime"></span
-          ><span class="daytime"></span><span class="daytime"></span>
-          <span class="nighttime"></span><span class="nighttime"></span
-          ><span class="nighttime"></span> <span class="nighttime"></span
-          ><span class="nighttime"></span><span class="nighttime"></span>
+          <span class="nighttime"></span>
+          <span class="nighttime"></span>
+          <span class="nighttime"></span>
+          <span class="nighttime"></span>
+          <span class="nighttime"></span>
+          <span class="daytime"></span>
+          <span class="daytime"></span>
+          <span class="daytime"></span>
+          <span class="daytime"></span>
+          <span class="daytime"></span>
+          <span class="daytime"></span>
+          <span class="daytime"></span>
+          <span class="daytime"></span>
+          <span class="daytime"></span>
+          <span class="daytime"></span>
+          <span class="daytime"></span>
+          <span class="daytime"></span>
+          <span class="nighttime"></span>
+          <span class="nighttime"></span>
+          <span class="nighttime"></span>
+          <span class="nighttime"></span>
+          <span class="nighttime"></span>
+          <span class="nighttime"></span>
 
           <span class="major nighttime">24</span>
         </div>
       </div>
     </div>
 
-    <!--to add a  grainy effect-->
+    <!--to add a grainy effect-->
     <!-- <svg>
       <filter id="noiseFilter">
         <feTurbulence
@@ -150,7 +165,16 @@
       </filter>
     </svg> -->
 
+    <!-- rotating material you effects -->
+    <div class="corner-image bottom-left">
+      <img src="images/Monetp-y.png" alt="Corner Image 3" />
+    </div>
+    <div class="corner-image bottom-right">
+      <img src="images/Monetp-t.png" alt="Corner Image 4" />
+    </div>
+
     <script src="scripts/main-script.js"></script>
     <script src="scripts/horizontal-clock.js"></script>
+    <script src="scripts/cursor-hover.js"></script>
   </body>
 </html>

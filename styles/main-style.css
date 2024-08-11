@@ -10,9 +10,20 @@
   --green: #6fb18a;
 }
 
+@font-face {
+  font-family: "Getai Grotesk Display"; /* Choose a name for the font */
+  src: url("../fonts/GetaiGrotesk/DTGetaiGroteskDisplay-Black.otf")
+      format("opentype"),
+    url("../fonts/GetaiGrotesk/DTGetaiGroteskDisplay-Black.ttf")
+      format("truetype"); /* Adjust the path to your font file */
+  font-weight: normal; /* Optional: Set the font weight */
+  font-style: normal; /* Optional: Set the font style */
+}
+
 body {
+  font-family: "Getai Grotesk Display", sans-serif;
+  /* font-family: Arial, sans-serif; */
   margin: 0;
-  font-family: Arial, sans-serif;
   background-color: var(--bg_light_mode);
   color: var(--text_light_mode);
   overflow-x: hidden;
@@ -37,7 +48,7 @@ body {
 
 body.light-mode {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Getai Grotesk Display", sans-serif;
   background-color: var(--bg_light_mode);
   color: var(--text_light_mode);
   overflow-x: hidden;
@@ -46,12 +57,14 @@ body.light-mode {
 
 body.dark-mode {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Getai Grotesk Display", sans-serif;
   background-color: var(--bg_dark_mode);
   color: var(--text_dark_mode);
   overflow-x: hidden;
   position: relative;
 }
+
+/* main nav bar */
 
 header {
   position: sticky;
@@ -60,7 +73,6 @@ header {
   z-index: 11;
 }
 
-/* main nav bar */
 .navbar {
   /* background: var(--bg); */
   backdrop-filter: blur(10px);
@@ -86,7 +98,7 @@ header {
   font-weight: bold;
 }
 
-/* glass effects */
+/* div with glass effects */
 
 .glass {
   position: relative;

@@ -4,7 +4,7 @@
   top: 0; /* Align with the top of the page */
   left: 0;
   width: 100%; /* Full width of the viewport */
-  height: 60vh; /* Adjust height to occupy top to upper-middle */
+  height: 200vh; /* Adjust height to occupy top to upper-middle */
   overflow: hidden; /* Hide overflow */
   z-index: -2;
 }
@@ -22,6 +22,7 @@
   height: 600px;
   width: 600px;
   animation: yellow 8s infinite ease;
+  /* here yellow and below red, green are not colors they are just names for the animation so that @keyframes can identify them */
 }
 
 .green {
@@ -114,9 +115,10 @@
 /* rotating material you effects */
 
 .corner-image {
-  position: fixed;
-  width: 600px;
-  height: 600px;
+  position: absolute;
+  bottom: 0px;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
   z-index: -1;
   pointer-events: none;
@@ -129,14 +131,14 @@
 }
 
 .bottom-left {
-  bottom: -375px;
-  left: -375px;
+  left: -200px;
+  bottom: -200px;
   animation: rotate 20s infinite linear;
 }
 
 .bottom-right {
-  bottom: -375px;
-  right: -375px;
+  bottom: -200px;
+  right: -200px;
   animation: rotate 25s infinite linear;
 }
 
@@ -147,4 +149,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* cursor hover effect */
+
+.cursor {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #b9debf;
+  transition: 0.1s;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 1000;
+}
+
+.hover-me:hover ~ .cursor {
+  transform: scale(6);
+  /* change .hover-me with any other class if you ant to make cursor bigger when hovered over */
 }
