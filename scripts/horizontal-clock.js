@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
   const sliderIndicator = document.querySelector(".slider-indicator");
   const timeSlider = document.querySelector(".time-slider");
-  const modeIcon = document.querySelector(".mode-icon");
+  const modeIconImg = document.querySelector(".mode-icon img"); // Select the img inside .mode-icon
 
   function getCurrentTime() {
     const now = new Date();
@@ -22,10 +22,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateModeBasedOnTime(time) {
     if (time >= 18 || time < 6) {
       // Enable dark mode between 6 PM and 6 AM
-      document.body.classList.add("dark-mode");
+      body.classList.add("dark-mode");
+      modeIconImg.src = "images/starry-night.svg"; // Change to dark mode icon
+      modeIconImg.alt = "Moon icon"; // Update alt text
     } else {
       // Enable light mode between 6 AM and 6 PM
-      document.body.classList.remove("dark-mode");
+      body.classList.remove("dark-mode");
+      modeIconImg.src = "images/clear-day.svg"; // Change to light mode icon
+      modeIconImg.alt = "Sun icon"; // Update alt text
     }
   }
 
