@@ -93,9 +93,9 @@
   transform: translateX(-50%);
   width: 20px; /* Update this value if .slider-indicator width changes */
   height: 20px; /* Adjust if necessary */
-  background-color: #fff;
+  /* background-color: #fff;
   border: 2px solid #333;
-  border-radius: 50%;
+  border-radius: 50%; */
 }
 
 .slider-indicator::after {
@@ -106,7 +106,7 @@
   transform: translateX(-50%);
   width: 2px; /* Typically remains constant, adjust if the design changes */
   height: 20px; /* Update if height of .slider-indicator changes */
-  background-color: #333;
+  background-color: var(--clock-indicator-color);
 }
 
 .mode-icon {
