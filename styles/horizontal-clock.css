@@ -111,11 +111,11 @@
 
 .mode-icon {
   position: absolute;
-  top: 11px; /* Center vertically within the circle */
+  top: 2px; /* Center vertically within the circle */
   left: 50%; /* Center horizontally within the circle */
   transform: translate(-50%, -50%);
-  width: 30px; /* Update this if the size needs to change relative to .slider-indicator */
-  height: 30px; /* Update if necessary */
+  width: 50px; /* Update this if the size needs to change relative to .slider-indicator */
+  height: 50px; /* Update if necessary */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
