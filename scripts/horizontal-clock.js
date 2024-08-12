@@ -1,3 +1,5 @@
+// function to control moviment of slider indicator on horizontal clock
+
 document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
   const sliderIndicator = document.querySelector(".slider-indicator");
@@ -18,12 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateModeBasedOnTime(time) {
-    if (time >= 6 && time < 18) {
-      body.classList.add("light-mode");
-      body.classList.remove("dark-mode");
+    if (time >= 18 || time < 6) {
+      // Enable dark mode between 6 PM and 6 AM
+      document.body.classList.add("dark-mode");
     } else {
-      body.classList.add("dark-mode");
-      body.classList.remove("light-mode");
+      // Enable light mode between 6 AM and 6 PM
+      document.body.classList.remove("dark-mode");
     }
   }
 
@@ -48,4 +50,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Update every 15 minute
   setInterval(updateTimeAndMode, 900000);
+});
+
+// function to control hover animation on hour markings
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hourMarkings = document.querySelectorAll(".hour-markings span");
+
+  function handleMouseMove(event) {
+    const rect = this.getBoundingClientRect();
+    const mouseX = event.clientX - rect.left; // Mouse position relative to the container
+
+    hourMarkings.forEach((mark, index) => {
+      const markRect = mark.getBoundingClientRect();
+      const distance = Math.abs(mouseX - (markRect.left + markRect.width / 2)); // Distance from the mouse to the center of the marking
+
+      const scale = Math.max(2.5 - distance / 100, 1); // Scale effect, closer markings are larger
+      mark.style.transform = `scaleY(${scale})`;
+    });
+  }
+
+  function resetScale() {
+    hourMarkings.forEach((mark) => {
+      mark.style.transform = "scaleY(1)"; // Reset the scale to normal when the mouse leaves
+    });
+  }
+
+  document
+    .querySelector(".time-slider")
+    .addEventListener("mousemove", handleMouseMove);
+  document
+    .querySelector(".time-slider")
+    .addEventListener("mouseleave", resetScale);
 });

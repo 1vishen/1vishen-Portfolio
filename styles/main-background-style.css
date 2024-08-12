@@ -16,34 +16,34 @@
 }
 
 .yellow {
-  background-color: var(--yellow);
+  background-color: var(--blob-yellow);
   top: 10%; /* Adjust top position */
   left: 10%; /* Adjust left position */
   height: 600px;
   width: 600px;
-  animation: yellow 8s infinite ease;
-  /* here yellow and below red, green are not colors they are just names for the animation so that @keyframes can identify them */
+  animation: yellow1 8s infinite ease;
+  /* here yellow1 and below red1, green1 are not colors they are just names for the animation so that @keyframes can identify them */
 }
 
 .green {
-  background-color: var(--green);
+  background-color: var(--blob-green);
   top: 20%; /* Adjust top position */
   right: 10%; /* Adjust right position */
   height: 500px;
   width: 550px;
-  animation: green 8s infinite ease;
+  animation: green1 8s infinite ease;
 }
 
 .red {
-  background-color: var(--red);
+  background-color: var(--blob-red);
   bottom: 10%; /* Adjust bottom position */
   left: 50%; /* Adjust left position */
   height: 550px;
   width: 500px;
-  animation: red 8s infinite linear;
+  animation: red1 8s infinite linear;
 }
 
-@keyframes yellow {
+@keyframes yellow1 {
   0% {
     top: 200px;
     left: 100px;
@@ -66,7 +66,7 @@
   }
 }
 
-@keyframes green {
+@keyframes green1 {
   0% {
     top: 80px;
     right: -20px;
@@ -89,7 +89,7 @@
   }
 }
 
-@keyframes red {
+@keyframes red1 {
   0% {
     top: 250px;
     right: 0px;
@@ -115,7 +115,7 @@
 /* rotating material you effects */
 
 .corner-image {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   width: 300px;
   height: 300px;
@@ -131,14 +131,14 @@
 }
 
 .bottom-left {
-  left: -200px;
-  bottom: -200px;
+  left: -150px;
+  bottom: -150px;
   animation: rotate 20s infinite linear;
 }
 
 .bottom-right {
-  bottom: -200px;
-  right: -200px;
+  bottom: -150px;
+  right: -150px;
   animation: rotate 25s infinite linear;
 }
 
@@ -158,7 +158,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #b9debf;
+  background: var(--cursor-hover-bg);
   transition: 0.1s;
   transform: translate(-50%, -50%);
   pointer-events: none;

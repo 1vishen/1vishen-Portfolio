@@ -1,31 +1,67 @@
 /*Main site style*/
 
+/* light and dark mode implementation */
+
 :root {
-  --bg_light_mode: #ede7de;
-  --text_light_mode: #025a4e;
-  --bg_dark_mode: #233831;
-  --text_dark_mode: #8fdcc2;
-  --yellow: #edb74d;
-  --red: #eb6666;
-  --green: #6fb18a;
+  --bg-color: #ede7de;
+  --text-color: #025a4e;
+  --blob-yellow: #edb74d;
+  --blob-green: #6fb18a;
+  --blob-red: #eb6666;
+  /* --clock-bars-color-1: #f1c174;
+  --clock-bars-color-2: #389878; */
+  --clock-bars-color-1: rgba(56, 152, 120, 1);
+  --clock-bars-color-2: rgba(56, 152, 120, 0.3);
+
+  --cursor-hover-bg: #e9e92b;
+}
+
+body.dark-mode {
+  --bg-color: #233831;
+  --text-color: #8fdcc2;
+  --blob-yellow: #edb74d;
+  --blob-green: #6fb18a;
+  --blob-red: #eb6666;
+  /* --clock-bars-color-1: #f1c174;
+  --clock-bars-color-2: #389878; */
+  --clock-bars-color-1: rgba(241, 193, 116, 0.3);
+  --clock-bars-color-2: rgba(241, 193, 116, 1);
+
+  --cursor-hover-bg: #8fdcc2;
+}
+
+/* @font-face {                                                       */
+/*  font-family: "GetaiGroteskDisplay";    Choose a name for the font */
+/*  src: url("../fonts/GetaiGrotesk/DTGetaiGroteskDisplay-Black.otf") */
+/*      format("opentype"),                                           */
+/*    url("../fonts/GetaiGrotesk/DTGetaiGroteskDisplay-Black.ttf")    */
+/*      format("truetype"); Adjust the path to your font file         */
+/*  font-weight: normal; Optional: Set the font weight                */
+/*  font-style: normal; Optional: Set the font style                  */
+/* }                                                                  */
+
+@font-face {
+  font-family: "Kola";
+  src: url("../fonts/Kola_Complete/Fonts/OTF/Kola-Regular.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Getai Grotesk Display"; /* Choose a name for the font */
-  src: url("../fonts/GetaiGrotesk/DTGetaiGroteskDisplay-Black.otf")
-      format("opentype"),
-    url("../fonts/GetaiGrotesk/DTGetaiGroteskDisplay-Black.ttf")
-      format("truetype"); /* Adjust the path to your font file */
-  font-weight: normal; /* Optional: Set the font weight */
-  font-style: normal; /* Optional: Set the font style */
+  font-family: "AveriaSerifLibre";
+  src: url("../fonts/Averia_Serif_Libre/AveriaSerifLibre-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-  font-family: "Getai Grotesk Display", sans-serif;
+  font-family: "AveriaSerifLibre", sans-serif;
   /* font-family: Arial, sans-serif; */
   margin: 0;
-  background-color: var(--bg_light_mode);
-  color: var(--text_light_mode);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   overflow-x: hidden;
   position: relative;
 }
@@ -43,26 +79,6 @@ body {
   opacity: 0.4;
   filter: url(#noiseFilter);
 } */
-
-/* light and dark mode implementation */
-
-body.light-mode {
-  margin: 0;
-  font-family: "Getai Grotesk Display", sans-serif;
-  background-color: var(--bg_light_mode);
-  color: var(--text_light_mode);
-  overflow-x: hidden;
-  position: relative;
-}
-
-body.dark-mode {
-  margin: 0;
-  font-family: "Getai Grotesk Display", sans-serif;
-  background-color: var(--bg_dark_mode);
-  color: var(--text_dark_mode);
-  overflow-x: hidden;
-  position: relative;
-}
 
 /* main nav bar */
 
@@ -94,8 +110,28 @@ header {
 
 .navbar a {
   text-decoration: none;
-  color: var(--text);
+  color: var(--text-color);
   font-weight: bold;
+}
+
+.my-name {
+  font-family: "Kola", sans-serif;
+  font-size: 90px;
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  height: 100vh; /* Sets the height of the container to the full viewport height */
+  text-align: center; /* Ensures the text is centered within the block-level elements */
+  flex-direction: column; /* Stacks the paragraphs vertically */
+}
+
+.my-name p {
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+}
+
+.my-name p + p {
+  margin-top: 10px; /* Adjust this value to control the space between the two paragraphs */
 }
 
 /* div with glass effects */
