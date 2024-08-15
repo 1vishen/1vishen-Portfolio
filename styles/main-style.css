@@ -66,6 +66,11 @@ body {
   position: relative;
 }
 
+::selection {
+  background-color: #ffcc00; /* The background color for the text highlight */
+  color: #000000; /* The text color when highlighted */
+}
+
 /* to add a  grainy effect */
 /* body::before {
   content: "";
@@ -84,16 +89,18 @@ body {
 
 header {
   position: sticky;
-  top: 0;
+  top: 20px;
   width: 100%;
   z-index: 11;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar {
-  /* background: var(--bg); */
-  backdrop-filter: blur(10px);
+  background: transparent;
   padding: 10px 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.9s ease;
+  width: 60%;
 }
 
 .navbar ul {
@@ -112,6 +119,14 @@ header {
   text-decoration: none;
   color: var(--text-color);
   font-weight: bold;
+}
+
+.navbar.scrolled {
+  backdrop-filter: blur(10px);
+  /* background: rgba(255, 255, 255, 0.2); Adjust opacity to your liking */
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px; /* Rounded corners */
 }
 
 .my-name {
