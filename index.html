@@ -37,28 +37,38 @@
       <p>I turn logic into pixels.</p>
     </div>
 
-    <div class="glass testText">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, aut.
-      Error veritatis excepturi vero. Rem necessitatibus reprehenderit illo id?
-      Aperiam, quae ducimus maiores excepturi cumque porro unde corrupti aut
-      voluptatibus? Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-      Non facilis aliquam sapiente omnis perspiciatis, dolorum libero ipsa
-      labore sequi veritatis iusto aut voluptates quod deleniti quas
-      voluptatibus excepturi assumenda iste! Lorem ipsum dolor sit amet,
-      consectetur adipisicing elit. Nam nobis atque odit modi at, provident odio
-      error! Eaque delectus error maiores maxime aperiam incidunt ullam illum
-      similique, deserunt ipsum explicabo?
+    <div class="container-div">
+      <div class="hover-me glass">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
+        aut. Error veritatis excepturi vero. Rem necessitatibus reprehenderit
+        illo id? Aperiam, quae ducimus maiores excepturi cumque porro unde
+        corrupti aut voluptatibus? Lorem ipsum dolor sit, amet consectetur
+        adipisicing elit. Non facilis aliquam sapiente omnis perspiciatis,
+        dolorum libero ipsa labore sequi veritatis iusto aut voluptates quod
+        deleniti quas voluptatibus excepturi assumenda iste! Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Nam nobis atque odit modi at,
+        provident odio error! Eaque delectus error maiores maxime aperiam
+        incidunt ullam illum similique, deserunt ipsum explicabo?
+      </div>
+
+      <div>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
+        aut. Error veritatis excepturi vero. Rem necessitatibus reprehenderit
+        illo id? Aperiam, quae ducimus maiores excepturi cumque porro unde
+        corrupti aut voluptatibus? Lorem ipsum dolor sit, amet consectetur
+        adipisicing elit. Non facilis aliquam sapiente omnis perspiciatis,
+        dolorum libero ipsa labore sequi veritatis iusto aut voluptates quod
+        deleniti quas voluptatibus excepturi assumenda iste! Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Nam nobis atque odit modi at,
+        provident odio error! Eaque delectus error maiores maxime aperiam
+        incidunt ullam illum similique, deserunt ipsum explicabo?
+      </div>
     </div>
 
-    <div class="wrapper-div">
-      <h1 class="hover-me glass">
-        a b c d e f g h i j k l m n o p q r s t u v w x y z
-      </h1>
-      <h1 class="hover-me glass">
-        A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-      </h1>
-      <div class="cursor"></div>
-    </div>
+    <h1 class="hover-me glass">
+      A B C D E F G H I J K L M N O P Q R S T U V W X Y Z &#8226; a b c d e f g
+      h i j k l m n o p q r s t u v w x y z
+    </h1>
 
     <!--Horizontal clock-->
     <div class="time-slider-container">
@@ -100,6 +110,22 @@
       </div>
     </div>
 
+    <!-- rotating material you effects -->
+    <div class="corner-image bottom-left">
+      <img
+        class="material-you-img"
+        src="images/Monetp-y.png"
+        alt="Corner Image 3"
+      />
+    </div>
+    <div class="corner-image bottom-right">
+      <img
+        class="material-you-img"
+        src="images/Monetp-t.png"
+        alt="Corner Image 4"
+      />
+    </div>
+
     <!--to add a grainy effect-->
     <!-- <svg>
       <filter id="noiseFilter">
@@ -118,13 +144,8 @@
       </filter>
     </svg> -->
 
-    <!-- rotating material you effects -->
-    <div class="corner-image bottom-left">
-      <img src="images/Monetp-y.png" alt="Corner Image 3" />
-    </div>
-    <div class="corner-image bottom-right">
-      <img src="images/Monetp-t.png" alt="Corner Image 4" />
-    </div>
+    <!--needs to be outside any div to function properly on all of them-->
+    <div class="cursor"></div>
 
     <script src="scripts/main-script.js"></script>
     <script src="scripts/horizontal-clock.js"></script>

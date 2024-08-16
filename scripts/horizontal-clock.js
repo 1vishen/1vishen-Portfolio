@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // function to control hover animation on hour markings
-
 document.addEventListener("DOMContentLoaded", function () {
   const hourMarkings = document.querySelectorAll(".hour-markings span");
 

@@ -1,27 +1,27 @@
 /*Main site style*/
-
 /* light and dark mode implementation */
 
 :root {
   --bg-color: #ede7de;
   --text-color: #025a4e;
-  --blob-yellow: #edb74d;
-  --blob-green: #6fb18a;
-  --blob-red: #eb6666;
+  --blob-yellow: #73bba3;
+  --blob-green: #b4e380;
+  --blob-red: #88d66c;
   /* --clock-bars-color-1: #f1c174;
   --clock-bars-color-2: #389878; */
   --clock-bars-color-1: rgba(56, 152, 120, 1);
   --clock-bars-color-2: rgba(56, 152, 120, 0.3);
   --clock-indicator-color: rgba(241, 193, 116, 1);
   --cursor-hover-bg: #e9e92b;
+  --div-hover-color: #6fb18a;
 }
 
 body.dark-mode {
   --bg-color: #233831;
   --text-color: #8fdcc2;
-  --blob-yellow: #edb74d;
-  --blob-green: #6fb18a;
-  --blob-red: #eb6666;
+  --blob-yellow: #059212;
+  --blob-green: #365e32;
+  --blob-red: #0a6847;
   /* --clock-bars-color-1: #f1c174;
   --clock-bars-color-2: #389878; */
   --clock-bars-color-1: rgba(241, 193, 116, 0.3);
@@ -149,8 +149,17 @@ header {
   margin-top: 10px; /* Adjust this value to control the space between the two paragraphs */
 }
 
-/* div with glass effects */
+.container-div {
+  position: relative;
+  margin: 60px;
+  padding: 60px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  z-index: 10;
+}
 
+/* div with glass effects */
 .glass {
   position: relative;
   margin: 60px;
@@ -168,4 +177,25 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   z-index: 10;
+}
+
+/* cursor hover effect - circle following the pointer */
+/* cursor hover effect on horizontal clock implemented separately in css, js named after it */
+.cursor {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--cursor-hover-bg);
+  transition: 0.1s;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 1000;
+}
+
+/* cursor hover effect - enlarge */
+/* add hover-me to any other div where we to make cursor bigger when hovered over */
+.cursor-hover {
+  transform: scale(4.5);
 }
