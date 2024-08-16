@@ -122,6 +122,7 @@
   overflow: hidden;
   z-index: -1;
   pointer-events: none;
+  opacity: 30%;
 }
 
 .corner-image img {
@@ -167,6 +168,6 @@
 }
 
 .hover-me:hover ~ .cursor {
-  transform: scale(6);
+  transform: scale(4.5);
   /* change .hover-me with any other class if you ant to make cursor bigger when hovered over */
 }
