@@ -4,6 +4,7 @@
 :root {
   --bg-color: #ede7de;
   --text-color: #025a4e;
+
   --blob-yellow: #73bba3;
   --blob-green: #b4e380;
   --blob-red: #88d66c;
@@ -12,13 +13,21 @@
   --clock-bars-color-1: rgba(56, 152, 120, 1);
   --clock-bars-color-2: rgba(56, 152, 120, 0.3);
   --clock-indicator-color: rgba(241, 193, 116, 1);
+
   --cursor-hover-bg: #e9e92b;
-  --div-hover-color: #6fb18a;
+
+  --svg-color-out-top: #40a578;
+  --svg-color-in-top: #ede7de;
+  --svg-color-out-bottom: #c3ff93;
+  --svg-color-in-bottom: #ede7de;
+
+  --content-div-color: #e9e0d3;
 }
 
 body.dark-mode {
   --bg-color: #233831;
   --text-color: #8fdcc2;
+
   --blob-yellow: #059212;
   --blob-green: #365e32;
   --blob-red: #0a6847;
@@ -27,7 +36,15 @@ body.dark-mode {
   --clock-bars-color-1: rgba(241, 193, 116, 0.3);
   --clock-bars-color-2: rgba(241, 193, 116, 1);
   --clock-indicator-color: rgba(56, 152, 120, 1);
+
   --cursor-hover-bg: #8fdcc2;
+
+  --svg-color-out-top: #40a578;
+  --svg-color-in-top: #233831;
+  --svg-color-out-bottom: #c3ff93;
+  --svg-color-in-bottom: #233831;
+
+  --content-div-color: #0c2c21;
 }
 
 /* @font-face {                                                       */
@@ -113,20 +130,35 @@ header {
 
 .navbar li {
   margin: 0 10px;
+  align-items: center;
 }
 
 .navbar a {
   text-decoration: none;
   color: var(--text-color);
   font-weight: bold;
+  padding: 8px 20px; /* Add padding for spacing */
+  border-radius: 15px; /* Rounded corners */
+  transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
 }
 
 .navbar.scrolled {
   backdrop-filter: blur(10px);
   /* background: rgba(255, 255, 255, 0.2); Adjust opacity to your liking */
-  padding: 10px 20px;
+  padding: 15px 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 15px; /* Rounded corners */
+}
+
+.navbar ul li.current-page a {
+  backdrop-filter: blur(10px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(0, 0, 0, 0.1); /* Initial state */
+  transition: background 0.6s ease, box-shadow 0.6s ease; /* Smooth transition for background and box-shadow */
 }
 
 .my-name {
@@ -151,12 +183,34 @@ header {
 
 .container-div {
   position: relative;
+  top: -20px;
   margin: 60px;
   padding: 60px;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   z-index: 10;
+}
+
+.content-div-1,
+.content-div-2,
+.content-div-3,
+.content-div-4 {
+  position: relative;
+  font-size: 38px;
+  margin: 40px;
+  padding: 40px;
+  background-color: var(--content-div-color);
+  border-radius: 20px;
+  /* border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); */
+  z-index: 10;
+}
+
+.content-div-2,
+.content-div-3,
+.content-div-4 {
+  font-size: 25px;
 }
 
 /* div with glass effects */

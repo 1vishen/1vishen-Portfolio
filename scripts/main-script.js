@@ -45,3 +45,23 @@ hoverElements.forEach((el) => {
     cursor.classList.remove("cursor-hover");
   });
 });
+
+// code to detect the current page and add the class dynamically for navbar border
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname.split("/").pop(); // Get the current page's filename
+  const navLinks = document.querySelectorAll(".navbar ul li a");
+
+  navLinks.forEach((link) => {
+    // Normalize href path to be relative to the document root
+    const linkHref = new URL(
+      link.getAttribute("href"),
+      window.location.origin
+    ).pathname
+      .split("/")
+      .pop();
+
+    if (linkHref === currentPage) {
+      link.parentElement.classList.add("current-page");
+    }
+  });
+});

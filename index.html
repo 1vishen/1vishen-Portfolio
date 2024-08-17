@@ -14,21 +14,21 @@
     <header>
       <nav class="navbar">
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#notes">Notes</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#resume">Resume</a></li>
+          <li><a href="../index.html">About</a></li>
+          <li><a href="otherContents/work.html">Work</a></li>
+          <li><a href="otherContents/notes.html">Notes</a></li>
+          <li><a href="otherContents/contact.html">Contact</a></li>
+          <li><a href="otherContents/resume.html">Resume</a></li>
         </ul>
       </nav>
     </header>
 
-    <!--moving color blobs-->
-    <div class="blob-cont">
+    <!-- moving color blobs -->
+    <!-- <div class="blob-cont">
       <div class="yellow blob"></div>
       <div class="red blob"></div>
       <div class="green blob"></div>
-    </div>
+    </div> -->
 
     <!--main content-->
     <!-- div with glass effects -->
@@ -37,38 +37,79 @@
       <p>I turn logic into pixels.</p>
     </div>
 
-    <div class="container-div">
-      <div class="hover-me glass">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
-        aut. Error veritatis excepturi vero. Rem necessitatibus reprehenderit
-        illo id? Aperiam, quae ducimus maiores excepturi cumque porro unde
-        corrupti aut voluptatibus? Lorem ipsum dolor sit, amet consectetur
-        adipisicing elit. Non facilis aliquam sapiente omnis perspiciatis,
-        dolorum libero ipsa labore sequi veritatis iusto aut voluptates quod
-        deleniti quas voluptatibus excepturi assumenda iste! Lorem ipsum dolor
-        sit amet, consectetur adipisicing elit. Nam nobis atque odit modi at,
-        provident odio error! Eaque delectus error maiores maxime aperiam
-        incidunt ullam illum similique, deserunt ipsum explicabo?
+    <div class="container-div glass">
+      <div class="content-div-1">
+        I'm a passionate beginner Software Developer dedicated to crafting
+        engaging and user-friendly web experiences while leveraging my
+        programming skills to optimize performance.
       </div>
 
-      <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
-        aut. Error veritatis excepturi vero. Rem necessitatibus reprehenderit
-        illo id? Aperiam, quae ducimus maiores excepturi cumque porro unde
-        corrupti aut voluptatibus? Lorem ipsum dolor sit, amet consectetur
-        adipisicing elit. Non facilis aliquam sapiente omnis perspiciatis,
-        dolorum libero ipsa labore sequi veritatis iusto aut voluptates quod
-        deleniti quas voluptatibus excepturi assumenda iste! Lorem ipsum dolor
-        sit amet, consectetur adipisicing elit. Nam nobis atque odit modi at,
-        provident odio error! Eaque delectus error maiores maxime aperiam
-        incidunt ullam illum similique, deserunt ipsum explicabo?
+      <div class="content-div-2">
+        Over the past few years, I’ve immersed myself in various areas of
+        software development, including web development, machine learning, and
+        cloud computing. I’ve been fortunate to explore diverse technologies and
+        continuously enhance my skills.
+        <br /><br /><br />
+        Currently, I’m focused on building full-stack applications and
+        leveraging machine learning to solve real-world problems. I’m always
+        eager to collaborate on projects that push the boundaries of technology,
+        education, or sustainability.
+        <br /><br /><br />
+        I believe that technology can be a force for good, and I aim to
+        contribute to meaningful projects that align with these values. If you
+        share a similar vision, I’d love to connect.
       </div>
     </div>
 
-    <h1 class="hover-me glass">
-      A B C D E F G H I J K L M N O P Q R S T U V W X Y Z &#8226; a b c d e f g
-      h i j k l m n o p q r s t u v w x y z
-    </h1>
+    <div class="content-div-3">
+      <div class="card">
+        <p>Develop</p>
+        I code responsive web applications and build machine learning models.
+        From front-end interfaces to back-end logic, I ensure that everything
+        functions seamlessly. I believe in writing clean, efficient code that’s
+        maintainable and scalable.
+        <br /><br />
+      </div>
+      <div class="card">
+        <p>Collaborate</p>
+        Good software is built through collaboration. I value teamwork and
+        actively seek feedback from peers to iterate and improve. I aim to
+        foster a collaborative environment where ideas are exchanged freely and
+        innovation thrives.
+        <br /><br />
+      </div>
+      <div class="card">
+        <p>Learn</p>
+        Technology is ever-evolving, and I’m committed to lifelong learning.
+        Whether it’s mastering a new programming language or diving into a
+        complex algorithm, I believe in continuously expanding my knowledge to
+        stay at the forefront of the industry.
+        <br /><br />
+      </div>
+      <div class="card">
+        <p>Experiment</p>
+        Not every experiment succeeds, but every experiment teaches something
+        valuable. I’m always exploring new tools, frameworks, and methodologies
+        to see what works best. The tech world is full of possibilities, and I’m
+        here to explore them.
+      </div>
+    </div>
+
+    <div class="content-div-4">
+      Before diving deep into software development, I began my journey with
+      electronics, creating projects based on Arduino.
+      <br /><br />
+      My side projects often involve exploring new technologies, whether it’s
+      building a weather-app, experimenting with APIs, or integrating machine
+      learning into web applications. These projects fuel my curiosity and help
+      me stay up-to-date with the latest trends in software development.
+      <br /><br />
+      Outside of coding, I enjoy watching Documentaries, or simply spending time
+      with loved ones, I believe in maintaining a balanced life that fuels
+      creativity and productivity.
+    </div>
+
+    <h1 class="hover-me glass"></h1>
 
     <!--Horizontal clock-->
     <div class="time-slider-container">
@@ -124,6 +165,60 @@
         src="images/Monetp-t.png"
         alt="Corner Image 4"
       />
+    </div>
+
+    <!-- Single file SVG animation can be used as CSS backgroud-->
+    <div class="blob-cont">
+      <svg preserveAspectRatio="xMidYMid slice" viewBox="10 10 80 80">
+        <defs>
+          <style>
+            @keyframes rotate {
+              0% {
+                transform: rotate(0deg);
+              }
+              100% {
+                transform: rotate(360deg);
+              }
+            }
+            .out-top {
+              animation: rotate 20s linear infinite;
+              transform-origin: 13px 25px;
+              fill: var(--svg-color-out-top);
+            }
+            .in-top {
+              animation: rotate 10s linear infinite;
+              transform-origin: 13px 25px;
+              fill: var(--svg-color-in-top);
+            }
+            .out-bottom {
+              animation: rotate 25s linear infinite;
+              transform-origin: 84px 93px;
+              fill: var(--svg-color-out-bottom);
+            }
+            .in-bottom {
+              animation: rotate 15s linear infinite;
+              transform-origin: 84px 93px;
+              fill: var(--svg-color-in-bottom);
+            }
+          </style>
+        </defs>
+        <path
+          class="out-top"
+          d="M37-5C25.1-14.7,5.7-19.1-9.2-10-28.5,1.8-32.7,31.1-19.8,49c15.5,21.5,52.6,22,67.2,2.3C59.4,35,53.7,8.5,37-5Z"
+        />
+        <path
+          class="in-top"
+          d="M20.6,4.1C11.6,1.5-1.9,2.5-8,11.2-16.3,23.1-8.2,45.6,7.4,50S42.1,38.9,41,24.5C40.2,14.1,29.4,6.6,20.6,4.1Z"
+        />
+        <path
+          class="out-bottom"
+          d="M105.9,48.6c-12.4-8.2-29.3-4.8-39.4.8-23.4,12.8-37.7,51.9-19.1,74.1s63.9,15.3,76-5.6c7.6-13.3,1.8-31.1-2.3-43.8C117.6,63.3,114.7,54.3,105.9,48.6Z"
+        />
+        <path
+          class="in-bottom"
+          d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z"
+        />
+      </svg>
     </div>
 
     <!--to add a grainy effect-->

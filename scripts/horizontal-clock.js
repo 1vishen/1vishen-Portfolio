@@ -1,5 +1,10 @@
-// function to control moviment of slider indicator on horizontal clock
+// Define base path depending on the current page
+let basePath = "";
+if (window.location.pathname.includes("otherContents")) {
+  basePath = "../";
+}
 
+// function to control moviment of slider indicator on horizontal clock
 document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
   const sliderIndicator = document.querySelector(".slider-indicator");
@@ -23,12 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (time >= 18 || time < 6) {
       // Enable dark mode between 6 PM and 6 AM
       body.classList.add("dark-mode");
-      modeIconImg.src = "images/starry-night.svg"; // Change to dark mode icon
+      // Use basePath to set image paths
+      modeIconImg.src = `${basePath}images/starry-night.svg`; // Change to dark mode icon
       modeIconImg.alt = "Moon icon"; // Update alt text
     } else {
       // Enable light mode between 6 AM and 6 PM
       body.classList.remove("dark-mode");
-      modeIconImg.src = "images/clear-day.svg"; // Change to light mode icon
+      modeIconImg.src = `${basePath}images/clear-day.svg`; // Change to light mode icon
       modeIconImg.alt = "Sun icon"; // Update alt text
     }
   }
