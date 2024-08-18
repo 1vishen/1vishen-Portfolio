@@ -1,0 +1,28 @@
+.body {
+  margin: 0;
+  padding: 0;
+}
+
+.note-card {
+  background-color: var(--content-div-color);
+  border-radius: 15px;
+  padding: 20px 20px;
+  width: 80%; /* Ensure full width within flex container */
+  /* max-width: 500px; /* Set a max width for better aesthetics */
+  transition: transform 1.5s ease, background-color 1.5s ease, box-shadow 1.5s ease, width 1.5s ease;
+  text-align: center;
+  color: var(--text-color);
+  box-sizing: border-box; /* Include padding in the element's width */
+  overflow: hidden;
+  margin: 20px auto;
+  margin-top: 80px;
+}
+
+.note-card h1 {
+  margin-bottom: 10px;
+  font-size: 2.5em;
+}
+
+.note-content {
+  text-align: left;
+}

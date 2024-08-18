@@ -22,6 +22,9 @@
   --svg-color-in-bottom: #ede7de;
 
   --content-div-color: #e9e0d3;
+
+  --loader-color-1: #025a4e;
+  --loader-color-2: #e9e0d3;
 }
 
 body.dark-mode {
@@ -45,6 +48,9 @@ body.dark-mode {
   --svg-color-in-bottom: #233831;
 
   --content-div-color: #0c2c21;
+
+  --loader-color-1: #8fdcc2;
+  --loader-color-2: #0c2c21;
 }
 
 /* @font-face {                                                       */
@@ -101,7 +107,6 @@ body {
 } */
 
 /* main nav bar */
-
 header {
   position: sticky;
   top: 20px;
@@ -115,7 +120,9 @@ header {
   background: transparent;
   padding: 10px 20px;
   transition: all 0.9s ease;
-  width: 60%;
+  max-width: 920px; /* Set a max-width for better control */
+  width: 100%; /* Ensure it takes the full width within the max-width limit */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .navbar ul {
@@ -124,6 +131,7 @@ header {
   margin: 0;
   display: flex;
   justify-content: space-around;
+  width: 100%; /* Ensure the ul takes the full width */
 }
 
 .navbar li {
@@ -145,7 +153,9 @@ header {
   /* background: rgba(255, 255, 255, 0.2); Adjust opacity to your liking */
   padding: 15px 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 15px; /* Rounded corners */
+  border-radius: 15px;
+  max-width: 920px; /* Keep it consistent with the navbar max-width */
+  width: 100%; /* Ensure it takes the full width within the max-width limit */
 }
 
 .navbar ul li.current-page a {
@@ -155,6 +165,7 @@ header {
   transition: background 0.6s ease, box-shadow 0.6s ease; /* Smooth transition for background and box-shadow */
 }
 
+/* main content */
 .my-name {
   font-family: "Kola", sans-serif;
   font-size: 90px;
@@ -302,9 +313,7 @@ header {
   padding: 60px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(
-    10px
-  ); /*The same as backdrop-filter, but with a prefix for compatibility with WebKit browsers like Safari.*/
+  -webkit-backdrop-filter: blur(10px); /*The same as backdrop-filter, but with a prefix for compatibility with WebKit browsers like Safari.*/
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
@@ -330,4 +339,44 @@ header {
 /* add hover-me to any other div where we to make cursor bigger when hovered over */
 .cursor-hover {
   transform: scale(4.5);
+}
+
+/* svg loading animation */
+#loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color); /* Background color during loading */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/*
+ * Centering an element using absolute positioning and transform
+ * --------------------------------------------------------------
+ * 1. Set position: absolute; on the element
+ * 2. Set top: 50%; and left: 50%; to move the top-left corner to the center
+ * 3. At this point, the element isn't centered; its //top-left corner// is at the center of the container.
+ * 4. Use transform: translate(-50%, -50%); to adjust the element's position:
+ *    - Moves the element left by 50% of its own width
+ *    - Moves the element up by 50% of its own height
+ * 
+ * This technique:
+ * - Centers the element precisely within its container
+ * - Works regardless of the element's or container's dimensions
+ * - Is responsive and flexible for various screen sizes
+ * - Can be easily modified for off-center positioning if needed
+ */
+
+#loader svg {
+  max-width: 100px; /* Adjust size as needed */
+  max-height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -60,3 +60,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// svg loading animation
+document.addEventListener("DOMContentLoaded", function () {
+  const loader = document.getElementById("loader");
+  const content = document.getElementById("content");
+  const minLoadingTime = 400; // Minimum time in milliseconds
+
+  const revealContent = () => {
+    loader.style.opacity = "0";
+    loader.style.transition = "opacity 0.9s ease";
+
+    setTimeout(() => {
+      loader.style.display = "none";
+      content.style.display = "block";
+      content.classList.add("reveal");
+    }, 500); // Match this time with the transition duration
+  };
+
+  setTimeout(revealContent, minLoadingTime);
+});

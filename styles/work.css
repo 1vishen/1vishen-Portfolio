@@ -44,9 +44,8 @@
   font-size: 1.5em;
 }
 
-.project-card p {
-  font-size: 1em;
-  line-height: 1.6;
+.project-card ul li {
+  text-align: left;
 }
 
 .project-card img {
