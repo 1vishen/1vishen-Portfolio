@@ -53,12 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   navLinks.forEach((link) => {
     // Normalize href path to be relative to the document root
-    const linkHref = new URL(
-      link.getAttribute("href"),
-      window.location.origin
-    ).pathname
-      .split("/")
-      .pop();
+    const linkHref = new URL(link.getAttribute("href"), window.location.origin).pathname.split("/").pop();
 
     if (linkHref === currentPage) {
       link.parentElement.classList.add("current-page");

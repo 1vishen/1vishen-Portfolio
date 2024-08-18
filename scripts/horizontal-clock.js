@@ -19,9 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function setSliderPosition(time) {
     const indicatorWidth = 20; // Width of the slider indicator in pixels. Update if changed in CSS.
     const percentage = (time / 24) * 100;
-    sliderIndicator.style.left = `calc(${percentage}% - ${
-      indicatorWidth / 2
-    }px)`; // indicatorWidth / 2 to get the middle of the element be where we want it to be
+    sliderIndicator.style.left = `calc(${percentage}% - ${indicatorWidth / 2}px)`; // indicatorWidth / 2 to get the middle of the element be where we want it to be
   }
 
   function updateModeBasedOnTime(time) {
@@ -85,10 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  document
-    .querySelector(".time-slider")
-    .addEventListener("mousemove", handleMouseMove);
-  document
-    .querySelector(".time-slider")
-    .addEventListener("mouseleave", resetScale);
+  document.querySelector(".time-slider").addEventListener("mousemove", handleMouseMove);
+  document.querySelector(".time-slider").addEventListener("mouseleave", resetScale);
 });

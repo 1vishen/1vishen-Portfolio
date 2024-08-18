@@ -59,16 +59,14 @@ body.dark-mode {
 
 @font-face {
   font-family: "Kola";
-  src: url("../fonts/Kola_Complete/Fonts/OTF/Kola-Regular.otf")
-    format("opentype");
+  src: url("../fonts/Kola_Complete/Fonts/OTF/Kola-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "AveriaSerifLibre";
-  src: url("../fonts/Averia_Serif_Libre/AveriaSerifLibre-Regular.ttf")
-    format("truetype");
+  src: url("../fonts/Averia_Serif_Libre/AveriaSerifLibre-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -152,11 +150,7 @@ header {
 
 .navbar ul li.current-page a {
   backdrop-filter: blur(10px);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0)
-  );
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(0, 0, 0, 0.1); /* Initial state */
   transition: background 0.6s ease, box-shadow 0.6s ease; /* Smooth transition for background and box-shadow */
 }
@@ -193,9 +187,7 @@ header {
 }
 
 .content-div-1,
-.content-div-2,
-.content-div-3,
-.content-div-4 {
+.content-div-2 {
   position: relative;
   font-size: 38px;
   margin: 40px;
@@ -205,6 +197,8 @@ header {
   /* border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); */
   z-index: 10;
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Show "..." for overflowed text */
 }
 
 .content-div-2,
@@ -212,17 +206,101 @@ header {
 .content-div-4 {
   font-size: 25px;
 }
+.content-div-3,
+.content-div-4,
+.content-div-5 {
+  position: relative;
+  margin: 40px;
+  padding: 40px;
+  background-color: var(--content-div-color);
+  border-radius: 20px;
+  /* border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); */
+  z-index: 10;
+  text-align: center;
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Show "..." for overflowed text */
+}
+
+.content-heading {
+  font-size: 45px;
+  font-family: "Kola", sans-serif;
+}
+
+.content-flex-3 {
+  display: flex;
+  flex-wrap: wrap; /* Allows the items to wrap to the next line */
+  justify-content: center; /* Centers the items horizontally */
+  gap: 10px; /* Adds space between the items */
+}
+
+.content-flex-3 p {
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--bg-color);
+}
+
+/* Child cards styling */
+.content-div-sub-5 {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  gap: 20px; /* Increase gap for more space between cards */
+}
+
+.content-card-5 {
+  background-color: var(--bg-color);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 10px 0 10px;
+  width: 30%; /* Adjust based on your layout preference */
+  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Show "..." for overflowed text */
+}
+
+.content-heading-5 {
+  font-size: 25px;
+  height: 80px;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 10px;
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Show "..." for overflowed text */
+}
+
+.link-buttons {
+  display: block; /* Makes the link behave like a button */
+  padding: 15px 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: var(--text-color); /* Adjust to your desired text color */
+  text-decoration: none; /* Removes underline from link */
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Show "..." for overflowed text */
+}
+
+.link-buttons:hover,
+.link-buttons:focus {
+  background-color: var(--content-div-color); /* Adjust hover background color */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+  text-decoration: underline;
+}
 
 /* div with glass effects */
 .glass {
   position: relative;
   margin: 60px;
   padding: 60px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0)
-  );
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(
     10px
