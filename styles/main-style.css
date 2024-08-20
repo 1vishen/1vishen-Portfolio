@@ -63,12 +63,12 @@ body.dark-mode {
 /*  font-style: normal; Optional: Set the font style                  */
 /* }                                                                  */
 
-@font-face {
+/* @font-face {
   font-family: "Kola";
   src: url("../fonts/Kola_Complete/Fonts/OTF/Kola-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 @font-face {
   font-family: "AveriaSerifLibre";
@@ -77,8 +77,16 @@ body.dark-mode {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Kola";
+  src: url("../fonts/Kola_Complete/Fonts/WEB/fonts/Kola-Regular.woff2") format("woff2"),
+    url("../fonts/Kola_Complete/Fonts/WEB/fonts/Kola-Regular.woff") format("woff");
+  font-weight: normal; /* or bold */
+  font-style: normal; /* or italic */
+}
+
 body {
-  font-family: "AveriaSerifLibre", sans-serif;
+  font-family: "AveriaSerifLibre", Arial, sans-serif;
   /* font-family: Arial, sans-serif; */
   margin: 0;
   background-color: var(--bg-color);
