@@ -46,6 +46,7 @@
   transform-origin: bottom center; /* Expand upwards */
 }
 
+/* check if this is still necessary cause js logic is already handling this */
 .hour-markings span:hover,
 .hour-markings .major:hover {
   transform: scaleY(1.5); /* Increase size upwards on hover */
@@ -58,6 +59,7 @@
 .hour-markings .major {
   height: 25px;
   width: 2px;
+  /* I dont think font size and color is needed cause there's no longer a text inside it */
   font-size: 12px;
   color: #000000;
   display: flex;
@@ -105,7 +107,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 2px; /* Typically remains constant, adjust if the design changes */
-  height: 20px; /* Update if height of .slider-indicator changes */
+  height: 20px; /* Update if height of .slider-indicator changes, height is 40px in .slider-indicator but 20px here, that shouldn't interfere with the js logic but still confirm it */
   background-color: var(--clock-indicator-color);
 }
 
